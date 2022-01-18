@@ -2,7 +2,7 @@
 
 ## Útmutató:
   ### Mindenki a saját branch-ét használja!
-  ### Kanban/project: Katt[https://github.com/ImLumi/team_todo/projects/1]
+  ### Kanban/project: [Katt](https://github.com/ImLumi/team_todo/projects/1)
 
 
 ## Kezdés:
