@@ -1,6 +1,9 @@
 # Todo app versenyre
 
-## mindenki használja a saját branch-ét
+## Útmutató:
+  ### Mindenki a saját branch-ét használja!
+  ### Kanban/project: [Katt](https://github.com/ImLumi/team_todo/projects/1)
+
 
 ## Kezdés:
 - clone-ozd a repo-t
