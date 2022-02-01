@@ -1,2 +1,1 @@
-console.log('Hello toDo!');
-console.log('Teszt');
+import todoList from './fakeTodoDb.js';
