@@ -13,6 +13,7 @@
     },
     "rules": {
         "no-console": "off",
-        "prefer-const": "warn"
+        "prefer-const": "warn",
+        "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }]
     }
 }
