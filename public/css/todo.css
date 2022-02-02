@@ -1,0 +1,63 @@
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  margin: 30px 0;
+}
+
+.todo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(90, 90, 90);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height: 50px;
+  width: 100%;
+  margin: 7px;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.menu-btn {
+  cursor: pointer;
+}
+
+.menu-btn img {
+  width: 20px;
+}
+
+.menu {
+  position: absolute;
+  background-color: #fff;
+  width: 170px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  right: -180px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.menu button {
+  border: none;
+  outline: none;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  padding-left: 12px;
+  cursor: pointer;
+}
+
+.menu button:hover {
+  background-color: rgb(212, 212, 212);
+}
+
+.menu button img {
+  width: 20px;
+}

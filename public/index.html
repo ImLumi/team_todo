@@ -5,18 +5,18 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/effects.css">
   <link rel="stylesheet" href="css/general.css">
   <link rel="stylesheet" href="css/create-todo-input.css">
+  <link rel="stylesheet" href="css/effects.css">
+  <link rel="stylesheet" href="css/todo.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- 
   <title>ToDo</title>
 </head>
 
 <body>
   <div class="wrapper">
     <header>
-      <img src="./imges/FoxCubs_logo.png" alt="logo">
+      <img src="./images/FoxCubs_logo.png" alt="logo">
       <h1>TODO</h1>
     </header>
     <main>
@@ -39,14 +39,26 @@
       </div>
       <div class="todo-container">
         <div class="todo">
-          <div class="text-content">Banán ...</div>
+          <div class="text-content">Banán</div>
+          <div class="menu-btn"><img src="images/dots.svg" alt="dots"></div>
           <div class="menu">
-            <button>Kész</button>
-            <button>Szerkesztés</button>
-            <button>Törlés</button>
+            <button><img src="images/check.svg" alt="check">Kész</button>
+            <button><img src="images/edit.svg" alt="edit">Szerkesztés</button>
+            <button><img src="images/trash.svg" alt="trash">Törlés</button>
+          </div>
+        </div>
+        <!--
+        <div class="todo">
+          <div class="text-content">Alma</div>
+          <div class="menu-btn"><img src="images/dots.svg" alt="dots"></div>
+          <div class="menu">
+            <button><img src="images/check.svg" alt="check"></button>
+            <button><img src="images/edit.svg" alt="edit"></button>
+            <button><img src="images/trash.svg" alt="trash"></button>
           </div>
         </div>
       </div>
+      -->
     </main>
     <div class="help">?</div>
   </div>
