@@ -1,0 +1,99 @@
+.create-todo{
+    display:flex;    
+    margin-bottom:40px;
+    border: 1px solid #ccc;
+    padding: 5px 15px 3px;
+    border-radius: 25px;
+    height:40px;
+}
+.create-todo button{
+    background:transparent;
+    border: 0;
+    border-color:transparent;
+}
+.create-todo-icon span{
+    font-size:20px;
+}
+.create-todo input{
+    background-color: transparent;
+    border: 0;
+    background-color:transparent;
+    outline: 0;
+}
+input#new-todo{
+    flex-grow:1;
+    margin: 0 7px;
+}
+.date-item {
+    position: relative;
+    display: inline-block;
+}
+input[type="datetime-local"] {
+    display: inline-block;
+    width: 15px;
+    border: 0;
+    border-color: transparent;
+    background: transparent;
+    font-size: 16px;
+    color: #2f3136;
+    padding-left:15px;
+}
+input[type="datetime-local"]:focus{
+    color: #2f3136;
+}
+.calendar-wrapper {
+    position: relative;
+    background-color: transparent;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.date-time-input {
+display: inline-block;
+width: 100%;
+position: relative;
+z-index: 10;
+}
+
+.date-time-click {
+color: #ccc;
+background-color: transparent;
+width: 100%;
+cursor: pointer;
+}
+
+.date-time-click::-webkit-calendar-picker-indicator {
+position: absolute;
+right: -10px;
+color: rgba(204, 204, 204, 0);
+opacity: 0;
+width:50px;
+height:50px;
+}
+
+.date-time-click::-webkit-inner-spin-button {
+-webkit-appearance: none;
+}
+
+.date-time-click::-webkit-clear-button {
+margin-right: 75px;
+}
+
+.date-time-btn {
+background: transparent;
+border: none;
+color: black;
+position: absolute;
+right: -10px;
+top: 3px;
+width: 30px;
+}
+.date-time-btn img{
+width: 30px;
+}
+input#datetime:focus {
+    outline: none;
+}
+#add-todo{
+    margin-left: 5px;
+}

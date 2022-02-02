@@ -6,8 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="css/create-todo-input.css">
   <link rel="stylesheet" href="css/effects.css">
   <link rel="stylesheet" href="css/todo.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>ToDo</title>
 </head>
 
@@ -19,10 +21,17 @@
     </header>
     <main>
       <div class="create-todo">
-        <input type="text">
-        <input type="datetime-local" name="" id="">
-        <button id="add-todo"></button>
-        <button id="voice-input"></button>
+        <button id="voice-input" class="create-todo-icon"><span class="fa fa-microphone"></span></button>
+        <input type="text" name="new-todo" id="new-todo">
+        <div class="calendar-wrapper">
+          <div class="date-time-input">
+               <input class="date-time-click" type="datetime-local" name="datetime" id="datetime">
+          </div>
+          <button class="date-time-btn create-todo-icon"><span class="fa fa-calendar"></span></button>
+       </div>
+      
+        <button id="add-todo" class="create-todo-icon"><span class="fa fa-plus"></span></button>
+        
       </div>
       <div class="status">
         <button>Pending</button>
