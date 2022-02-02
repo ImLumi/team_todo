@@ -5,12 +5,12 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  color: #ccc;
-  background-color: #2f3136;
+  /* color: #ccc; */
 }
 
 body {
   width: 100%;
+  background-color: #2f3136;
 }
 .wrapper {
   width: 100%;
