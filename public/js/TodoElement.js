@@ -1,9 +1,9 @@
-export default class Todo {
+export default class TodoElement {
   #todoText;
   #dateTime;
   #isCompleted;
   #todoGroupElement;
-  #todoFaceElement;
+  #todoTextElement;
   #todoMenuElement;
 
   constructor(todoText, dateTime, isCompeted) {
@@ -19,10 +19,11 @@ export default class Todo {
 
   #createEditBtn() {
     const editBtn = document.createElement('button');
-    editBtn.classList.add('btn', 'btn-edit');
-    editBtn.textContent = 'Szerk.';
+    editBtn.classList.add('btn');
+    editBtn.innerHTML = '<img src="images/edit.svg" alt="edit">Szerkesztés';
     editBtn.addEventListener('click', () => {
-      this.#setTodoText('Sikeres');
+      this.#setTodoText('Majd jön valami editálós cucc');
+      this.#renderTodo();
       console.dir(this);
     });
     return editBtn;
@@ -30,8 +31,8 @@ export default class Todo {
 
   #createCompletedBtn() {
     const completedBtn = document.createElement('button');
-    completedBtn.classList.add('btn', 'btn-completed');
-    completedBtn.textContent = 'Kész';
+    completedBtn.classList.add('btn');
+    completedBtn.innerHTML = '<img src="images/check.svg" alt="check">Kész';
     completedBtn.addEventListener('click', () => {
       this.#isCompleted = true;
     });
@@ -40,8 +41,8 @@ export default class Todo {
 
   #createDeleteBtn() {
     const delBtn = document.createElement('button');
-    delBtn.classList.add('btn', 'btn-delete');
-    delBtn.textContent = 'Töröl';
+    delBtn.classList.add('btn');
+    delBtn.innerHTML = '<img src="images/trash.svg" alt="trash">Törlés';
     delBtn.addEventListener('click', () => {
       console.log(`DELETE Todo: ${this.#todoText}`);
     });
@@ -49,9 +50,9 @@ export default class Todo {
   }
 
   #createShowMenuBtn() {
-    const showMenuBtn = document.createElement('button');
-    showMenuBtn.classList.add('btn', 'btn-show-menu');
-    showMenuBtn.textContent = '...';
+    const showMenuBtn = document.createElement('div');
+    showMenuBtn.classList.add('menu-btn');
+    showMenuBtn.innerHTML = '<img src="images/dots.svg" alt="dots">';
     showMenuBtn.addEventListener('click', () => {
       this.#toggleMenuVisibility();
     });
@@ -62,38 +63,36 @@ export default class Todo {
     this.#todoMenuElement.classList.toggle('d-none');
   }
 
-  #renderTodoFaceElement() {
-    const todoTextP = document.createElement('p');
-    todoTextP.textContent = this.#todoText;
-    this.#todoFaceElement.innerHTML = '';
-    this.#todoFaceElement.appendChild(todoTextP);
-    this.#todoFaceElement.appendChild(this.#createShowMenuBtn());
+  #renderTodo() {
+    this.#todoTextElement.textContent = this.#todoText;
   }
 
   #createTodoMenuElement() {
     this.#todoMenuElement = document.createElement('div');
-    this.#todoMenuElement.classList.add('d-none', 'egyebb-osztaly');
+    this.#todoMenuElement.classList.add('menu', 'd-none');
 
-    this.#todoMenuElement.appendChild(this.#createEditBtn());
     this.#todoMenuElement.appendChild(this.#createCompletedBtn());
+    this.#todoMenuElement.appendChild(this.#createEditBtn());
     this.#todoMenuElement.appendChild(this.#createDeleteBtn());
   }
 
-  #createTodoFaceElement() {
-    this.#todoFaceElement = document.createElement('div');
-    this.#todoFaceElement.classList.add('mb-3', 'mt-3', 'egyebb-osztaly');
-    this.#renderTodoFaceElement();
+  #createTodoTextElement() {
+    this.#todoTextElement = document.createElement('div');
+    this.#todoTextElement.classList.add('text-content');
   }
 
   #createTodoHTML() {
-    this.#createTodoFaceElement();
+    this.#createTodoTextElement();
     this.#createTodoMenuElement();
-    this.#todoGroupElement.appendChild(this.#todoFaceElement);
+    this.#todoGroupElement.classList.add('todo');
+    this.#todoGroupElement.appendChild(this.#todoTextElement);
+    this.#todoGroupElement.appendChild(this.#createShowMenuBtn());
     this.#todoGroupElement.appendChild(this.#todoMenuElement);
   }
 
   addTodoToHTMLElement(parentElement) {
     this.#createTodoHTML();
+    this.#renderTodo();
     parentElement.appendChild(this.#todoGroupElement);
   }
 }
