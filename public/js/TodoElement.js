@@ -1,3 +1,5 @@
+import { createMenuBtnHandler, closeAllMenuEventListener } from './menuShowAndHide.js';
+
 export default class TodoElement {
   #todoText;
   #dateTime;
@@ -6,7 +8,7 @@ export default class TodoElement {
   #todoTextElement;
   #todoMenuElement;
 
-  constructor(todoText, dateTime, isCompeted) {
+  constructor(todoText, dateTime, isCompeted = false) {
     this.#todoText = todoText;
     this.#dateTime = dateTime;
     this.#isCompleted = isCompeted;
@@ -43,7 +45,8 @@ export default class TodoElement {
     const delBtn = document.createElement('button');
     delBtn.classList.add('btn');
     delBtn.innerHTML = '<img src="images/trash.svg" alt="trash">Törlés';
-    delBtn.addEventListener('click', () => {
+    delBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       console.log(`DELETE Todo: ${this.#todoText}`);
     });
     return delBtn;
@@ -53,18 +56,8 @@ export default class TodoElement {
     const showMenuBtn = document.createElement('div');
     showMenuBtn.classList.add('menu-btn');
     showMenuBtn.innerHTML = '<img src="images/dots.svg" alt="dots">';
-    showMenuBtn.addEventListener('click', () => {
-      this.#toggleMenuVisibility();
-    });
+    showMenuBtn.addEventListener('click', createMenuBtnHandler(this.#todoMenuElement));
     return showMenuBtn;
-  }
-
-  #toggleMenuVisibility() {
-    this.#todoMenuElement.classList.toggle('d-none');
-  }
-
-  #renderTodo() {
-    this.#todoTextElement.textContent = this.#todoText;
   }
 
   #createTodoMenuElement() {
@@ -81,6 +74,10 @@ export default class TodoElement {
     this.#todoTextElement.classList.add('text-content');
   }
 
+  #renderTodo() {
+    this.#todoTextElement.textContent = this.#todoText;
+  }
+
   #createTodoHTML() {
     this.#createTodoTextElement();
     this.#createTodoMenuElement();
@@ -91,6 +88,7 @@ export default class TodoElement {
   }
 
   addTodoToHTMLElement(parentElement) {
+    closeAllMenuEventListener();
     this.#createTodoHTML();
     this.#renderTodo();
     parentElement.appendChild(this.#todoGroupElement);
