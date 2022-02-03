@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/create-todo-input.css">
+  <link rel="stylesheet" href="css/createTodo.css">
   <link rel="stylesheet" href="css/effects.css">
   <link rel="stylesheet" href="css/todo.css">
   <link rel="stylesheet" href="css/general.css">
@@ -21,17 +21,15 @@
       <h1>TODO</h1>
     </header>
     <main>
-      <div class="create-todo">
-        <button id="voice-input" class="create-todo-icon"><span class="fa fa-microphone"></span></button>
-        <input type="text" name="new-todo" id="new-todo">
+      <form class="form-todo">
+        <button type="button" id="voiceButton" class="btn-voice"><span class="fa fa-microphone"></span></button>
+        <input type="text" name="todoText" class="todo-text-input">
         <div class="calendar-wrapper">
-          <input class="date-time-click" type="datetime-local" name="datetime" id="datetime">
+          <input class="date-time-input" type="datetime-local" name="dateTime">
           <span class="fa fa-calendar"></span>
         </div>
-
-        <button id="add-todo" class="create-todo-icon"><span class="fa fa-plus"></span></button>
-
-      </div>
+        <button class="create-todo-icon"><span class="fa fa-plus"></span></button>
+      </form>
       <div class="status">
         <button>Pending</button>
         <button>Done</button>
