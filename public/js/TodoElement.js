@@ -1,17 +1,21 @@
+import { removeTodoFromLocalStorage } from './todoDbUtils.js';
 import { createMenuBtnHandler, closeAllMenuEventListener } from './menuShowAndHide.js';
+import { createUID } from './utils.js';
 
 export default class TodoElement {
   #todoText;
   #dateTime;
   #isCompleted;
+  #id;
   #todoGroupElement;
   #todoTextElement;
   #todoMenuElement;
 
-  constructor(todoText, dateTime, isCompeted = false) {
+  constructor(todoText, dateTime, isCompeted = false, id = null) {
     this.#todoText = todoText;
     this.#dateTime = dateTime;
     this.#isCompleted = isCompeted;
+    this.#id = id || createUID();
     this.#todoGroupElement = document.createElement('div');
   }
 
@@ -47,7 +51,7 @@ export default class TodoElement {
     delBtn.innerHTML = '<img src="images/trash.svg" alt="trash">Törlés';
     delBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      console.log(`DELETE Todo: ${this.#todoText}`);
+      this.#removeTodo();
     });
     return delBtn;
   }
@@ -74,6 +78,11 @@ export default class TodoElement {
     this.#todoTextElement.classList.add('text-content');
   }
 
+  #removeTodo() {
+    removeTodoFromLocalStorage('todoList', this.#id);
+    this.#todoGroupElement.remove();
+  }
+
   #renderTodo() {
     this.#todoTextElement.textContent = this.#todoText;
   }
@@ -92,5 +101,14 @@ export default class TodoElement {
     this.#createTodoHTML();
     this.#renderTodo();
     parentElement.appendChild(this.#todoGroupElement);
+  }
+
+  toObject() {
+    return {
+      todoText: this.#todoText,
+      dateTime: this.#dateTime,
+      isCompleted: this.#isCompleted,
+      id: this.#id,
+    };
   }
 }
