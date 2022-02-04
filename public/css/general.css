@@ -27,11 +27,7 @@ header {
   margin: 20px 0;
 }
 
-img {
+.icon {
   width: 100px;
   margin-right: 10px;
-}
-
-.d-none {
-  display: none;
 }
