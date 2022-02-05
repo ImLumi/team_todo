@@ -27,13 +27,7 @@ header {
   margin: 20px 0;
 }
 
-img {
-  height: 70px;
-  width: 70px;
-  margin-bottom: 30px;
-  margin-top: 20px;
-}
-
-.d-none {
-  display: none;
+.icon {
+  width: 100px;
+  margin-right: 10px;
 }

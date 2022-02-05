@@ -22,10 +22,12 @@
 
 .menu-btn {
   cursor: pointer;
+  display: flex;
 }
 
 .menu-btn img {
   width: 20px;
+  margin-right: 10px;
 }
 
 .menu {
@@ -60,4 +62,5 @@
 
 .menu button img {
   width: 20px;
+  margin-right: 10px;
 }
