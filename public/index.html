@@ -23,9 +23,9 @@
       <h1>TODO</h1>
     </header>
     <main>
-      <form class="form-todo">
-        <button type="button" id="voiceButton" class="btn-voice"><img src="images/mic.svg" alt="microphone" class="input-icon mic"></button>
-        <input type="text" name="todoText" class="todo-text-input">
+      <form class="form-todo" novalidate>
+        <button type="button" id="voice-button" class="btn-voice"><img src="images/mic.svg" alt="microphone" class="input-icon mic"></button>
+        <input type="text" name="todoText" class="todo-text-input" required>
         <div class="calendar-wrapper">
           <input class="date-time-input" type="datetime-local" name="dateTime">
           <img src="images/calendar.svg" alt="calendar" class="input-icon">
@@ -33,8 +33,8 @@
         <button class="create-todo-icon"><img src="images/add.svg" alt="plus" class="input-icon"></button>
       </form>
       <div class="status">
-        <button class="left-rounder btn-status active">Pending</button>
-        <button class="right-rounder btn-status">Done</button>
+        <button class="left-rounder btn-status  active">Pending</button>
+        <button class="right-rounder btn-status ">Done</button>
       </div>
       <div class="todo-container">
         <div class="todo">
