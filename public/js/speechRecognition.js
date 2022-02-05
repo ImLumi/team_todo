@@ -6,9 +6,9 @@ export default function speechRecognition(input) {
   recognition.start();
 
   recognition.onresult = function (event) {
-    const current = event.resultIndex;
+      const current = event.resultIndex;
 
-    const transcript = event.results[current][0].transcript;
-    input.value = transcript;
+      const transcript = event.results[current][0].transcript;
+      input.value = transcript;
   };
 }

@@ -5,13 +5,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/general.css">
   <link rel="stylesheet" href="css/createTodo.css">
   <link rel="stylesheet" href="css/effects.css">
   <link rel="stylesheet" href="css/todo.css">
+  <link rel="stylesheet" href="css/general.css">
   <link rel="stylesheet" href="css/questionMark.css">
   <link rel="stylesheet" href="css/pendingAndDone.css">
-  <link rel="stylesheet" href="css/utils.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>ToDo</title>
 </head>
@@ -19,18 +18,18 @@
 <body>
   <div class="wrapper">
     <header>
-      <img src="./images/logoWithoutBackground.png" alt="logo" class="icon">
+      <img src="./images/fox-v-w.png" alt="logo">
       <h1>TODO</h1>
     </header>
     <main>
       <form class="form-todo" novalidate>
-        <button type="button" id="voice-button" class="btn-voice"><img src="images/mic.svg" alt="microphone" class="input-icon mic"></button>
+        <button type="button" id="voiceButton" class="btn-voice"><span class="fa fa-microphone"></span></button>
         <input type="text" name="todoText" class="todo-text-input" required>
         <div class="calendar-wrapper">
           <input class="date-time-input" type="datetime-local" name="dateTime">
-          <img src="images/calendar.svg" alt="calendar" class="input-icon">
+          <span class="fa fa-calendar"></span>
         </div>
-        <button class="create-todo-icon"><img src="images/add.svg" alt="plus" class="input-icon"></button>
+        <button class="create-todo-icon"><span class="fa fa-plus"></span></button>
       </form>
       <div class="status">
         <button class="left-rounder btn-status  active">Pending</button>
@@ -39,7 +38,7 @@
       <div class="todo-container">
         <div class="todo">
           <div class="text-content">Banán</div>
-          <div class="menu-btn"><img src="images/dots.svg" alt="dots"></div>
+          <div class="menu-btn"><img src="images/dots.svgs" alt="dots"></div>
           <div class="menu">
             <button><img src="images/check.svg" alt="check">Kész</button>
             <button><img src="images/edit.svg" alt="edit">Szerkesztés</button>

@@ -1,79 +1,66 @@
 .form-todo {
-  display: flex;
-  margin-bottom: 40px;
-  border: 1px solid #ccc;
-  padding: 3px 15px;
-  border-radius: 10px;
-  height: 50px;
-  color: #ccc;
+    display:flex;    
+    margin-bottom:40px;
+    border: 1px solid #ccc;
+    padding: 3px 15px;
+    border-radius: 10px;
+    height:50px;
+    color: #ccc;
 }
 
 .form-todo button {
-  background: transparent;
-  border: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    background:transparent;
+    border: 0;
 }
 
 .create-todo-icon {
-  font-size: 1.2rem;
-  color: #ccc;
+    font-size: 1.2rem;
+    color: #ccc;
 }
 
 .btn-voice {
-  font-size: 1.2rem;
-  color: rgb(165, 59, 59);
+    font-size: 1.2rem;
+    color: rgb(165, 59, 59);
 }
 
 .form-todo input {
-  background-color: transparent;
-  border: 0;
-  background-color: transparent;
-  outline: 0;
-  font-size: 1rem;
-  color: #ccc;
+    background-color: transparent;
+    border: 0;
+    background-color:transparent;
+    outline: 0;
+    font-size: 1rem;
+    color: #ccc;
 }
 
 .todo-text-input {
-  flex-grow: 1;
-  margin: 0 7px;
+    flex-grow:1;
+    margin: 0 7px;
 }
 
 .calendar-wrapper {
-  padding-top: 6px;
-  position: relative;
-  margin: auto 0;
-  background-color: transparent;
-  display: inline-block;
-  margin-right: 10px;
-  font-size: 1.1rem;
+    position: relative;
+    margin: auto 0;
+    background-color: transparent;
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 1.1rem;
 }
 
 .date-time-input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  cursor: pointer;
-}
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+      cursor:pointer;
+  }
 
-.date-time-input::-webkit-calendar-picker-indicator {
-  position: absolute;
-  top: -150%;
-  left: -150%;
-  width: 300%;
-  height: 300%;
-  cursor: pointer;
-}
-
-.input-icon {
-  height: 27px;
-  width: 27px;
-}
-
-button img {
-  margin: 0;
-}
+  .date-time-input::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: -150%;
+    left: -150%;
+    width: 300%;
+    height: 300%;
+    cursor: pointer;
+  }
