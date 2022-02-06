@@ -1,4 +1,4 @@
-import { removeTodoFromLocalStorage } from './todoDbUtils.js';
+import { removeTodoFromLocalStorage, updateLocalStorageWithEditedTodo } from './todoDbUtils.js';
 import { createMenuBtnHandler, closeAllMenuEventListener } from './menuShowAndHide.js';
 import { createUID } from './utils.js';
 import TodoEditElement from './TodoEditElement.js';
@@ -51,7 +51,9 @@ export default class TodoElement {
     completedBtn.classList.add('btn');
     completedBtn.innerHTML = '<img src="images/check.svg" alt="check">Kész';
     completedBtn.addEventListener('click', () => {
-      this.#isCompleted = true;
+      this.#isCompleted = !this.#isCompleted;
+      updateLocalStorageWithEditedTodo('todoList', this.toObject());
+      this.#todoGroupElement.remove();
     });
     return completedBtn;
   }

@@ -1,5 +1,6 @@
 import speechRecognition from './speechRecognition.js';
 import { updateLocalStorageWithEditedTodo } from './todoDbUtils.js';
+import loadPage from './todoPages.js';
 
 /* eslint-disable consistent-return */
 export default class TodoEditElement {
@@ -48,8 +49,7 @@ export default class TodoEditElement {
       this.#todoElement.setDateTime(formDataObj.dateTime);
       this.#todoElement.setTodoText(formDataObj.todoText);
       updateLocalStorageWithEditedTodo('todoList', this.#todoElement.toObject());
-      this.#editFormElement.classList.add('d-none');
-      this.#todoElement.renderTodo();
+      loadPage();
     });
   }
 
@@ -101,10 +101,6 @@ export default class TodoEditElement {
 
   showFormElement() {
     this.#editFormElement.classList.remove('d-none');
-  }
-
-  #hideFormElement() {
-    this.#editFormElement.classList.add('d-none');
   }
 
   getEditFormElement() {

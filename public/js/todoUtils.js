@@ -1,17 +1,35 @@
-import { addTodoToLocalStorage, getAllTodoFromLocalStorage } from './todoDbUtils.js';
+import { getAllTodoFromLocalStorage } from './todoDbUtils.js';
 import TodoElement from './TodoElement.js';
 
-export function loadTodo(todoContainer) {
+const sortingByDate = (firstTodo, secondTodo) => {
+  let [firstDateTime, secondDateTime] = [firstTodo.dateTime, secondTodo.dateTime];
+  firstDateTime = (!firstDateTime) ? '999999-02-19T17:55' : firstDateTime;
+  secondDateTime = (!secondDateTime) ? '999999-02-19T17:55' : secondDateTime;
+  if (firstDateTime < secondDateTime) return -1;
+  if (firstDateTime > secondDateTime) return 1;
+  return 0;
+};
+
+export function loadPendingTodo(todoContainer) {
   const todoList = getAllTodoFromLocalStorage('todoList');
-  todoList.forEach(({
+  todoList.sort(sortingByDate).forEach(({
     todoText, dateTime, isCompleted, id,
   }) => {
-    const todoElement = new TodoElement(todoText, dateTime, isCompleted, id);
-    todoElement.addTodoToHTMLElement(todoContainer);
+    if (isCompleted === false) {
+      const todoElement = new TodoElement(todoText, dateTime, isCompleted, id);
+      todoElement.addTodoToHTMLElement(todoContainer);
+    }
   });
 }
 
-export function addTodo(parentElement, todoObj) {
-  addTodoToLocalStorage('todoList', todoObj);
-  new TodoElement(todoObj.text, todoObj.dateTime).addTodoToHTMLElement(parentElement);
+export function loadCompletedTodo(todoContainer) {
+  const todoList = getAllTodoFromLocalStorage('todoList');
+  todoList.sort(sortingByDate).forEach(({
+    todoText, dateTime, isCompleted, id,
+  }) => {
+    if (isCompleted) {
+      const todoElement = new TodoElement(todoText, dateTime, isCompleted, id);
+      todoElement.addTodoToHTMLElement(todoContainer);
+    }
+  });
 }
