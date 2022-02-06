@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="css/todo.css">
   <link rel="stylesheet" href="css/questionMark.css">
   <link rel="stylesheet" href="css/pendingAndDone.css">
+  <link rel="stylesheet" href="css/editTodo.css">
   <link rel="stylesheet" href="css/utils.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>ToDo</title>
@@ -24,7 +25,8 @@
     </header>
     <main>
       <form class="form-todo" novalidate>
-        <button type="button" id="voice-button" class="btn-voice"><img src="images/mic.svg" alt="microphone" class="input-icon mic"></button>
+        <button type="button" class="btn-voice"><img src="images/mic.svg" alt="microphone"
+            class="input-icon mic"></button>
         <input type="text" name="todoText" class="todo-text-input" required>
         <div class="calendar-wrapper">
           <input class="date-time-input" type="datetime-local" name="dateTime">
@@ -37,58 +39,28 @@
         <button class="right-rounder btn-status ">Done</button>
       </div>
       <div class="todo-container">
+      <!-- 
         <div class="todo">
-          <div class="text-content">Banán</div>
-          <div class="menu-btn"><img src="images/dots.svg" alt="dots"></div>
-          <div class="menu">
+          <div class="text-content  d-none">Banán</div>
+          <form class="edit-form" novalidate>
+            <div class="edit-text-input">
+              <input required type="text" name="todoText" value="Banán">
+              <button type="button" class="btn-voice">
+                <img src="images/mic.svg" alt="microphone" class="input-icon mic">
+              </button>
+            </div>
+
+            <input type="datetime-local" name="dateTime">
+            <button class="btn-edit"><img src="images/check.svg" alt="plus" class="input-icon"></button>
+            <button class="btn-close" type="button"><img src="images/close.svg" alt="close" class="input-icon"></button>
+          </form>
+          <div class="menu-btn  d-none"><img src="images/dots.svg" alt="dots"></div>
+          <div class="menu d-none">
             <button><img src="images/check.svg" alt="check">Kész</button>
             <button><img src="images/edit.svg" alt="edit">Szerkesztés</button>
             <button><img src="images/trash.svg" alt="trash">Törlés</button>
           </div>
         </div>
-
-
-
-        <!-- EDIT
-
-                  <div class="todo">
-          <div class="todo-row edit">
-            <div class="text-content">asdf</div>
-            <div class="menu-btn"><img src="images/dots.svg" alt="dots"></div>
-            <div class="menu d-none">
-              <button class="btn"><img src="images/check.svg" alt="check">Kész</button>
-              <button class="btn"><img src="images/edit.svg" alt="edit">Szerkesztés</button>
-              <button class="btn"><img src="images/trash.svg" alt="trash">Törlés</button>
-            </div>
-          </div>
-
-          <div class="edit-content-box">
-            <div class="edit-fields">
-              <div class="edit-text-input">
-                <input type="text" name="" id="" value="Elkezdeni a Todo app fejlesztését"><button type="button"
-                  id="voiceButton" class="btn-voice"><span class="fa fa-microphone"></span></button>
-              </div>
-
-              <input type="datetime-local" name="" id="">
-
-            </div>
-            <div class="save-button">+</div>
-          </div>
-        </div>
-        -->
-
-
-        <!--
-        <div class="todo">
-          <div class="text-content">Alma</div>
-          <div class="menu-btn"><img src="images/dots.svg" alt="dots"></div>
-          <div class="menu">
-            <button><img src="images/check.svg" alt="check"></button>
-            <button><img src="images/edit.svg" alt="edit"></button>
-            <button><img src="images/trash.svg" alt="trash"></button>
-          </div>
-        </div>
-      </div>
       -->
     </main>
     <div class="help">?</div>
