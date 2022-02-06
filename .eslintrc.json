@@ -15,6 +15,7 @@
         "no-console": "off",
         "prefer-const": "warn",
         "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }],
-        "import/extensions": ["error", "always", { "js": "always", "json": "never" }]
+        "import/extensions": ["error", "always", { "js": "always", "json": "never" }],
+        "import/no-cycle": [2, { "maxDepth": 1 }]
     }
 }
