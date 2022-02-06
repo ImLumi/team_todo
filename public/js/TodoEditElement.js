@@ -1,3 +1,4 @@
+import speechRecognition from './speechRecognition.js';
 import { updateLocalStorageWithEditedTodo } from './todoDbUtils.js';
 
 /* eslint-disable consistent-return */
@@ -59,6 +60,12 @@ export default class TodoEditElement {
     });
   }
 
+  #addSpeechRecognition(btn) {
+    btn.addEventListener('click', () => {
+      speechRecognition(btn, this.#textInputElement);
+    });
+  }
+
   #createEditFormElement() {
     const form = document.createElement('form');
     this.#editFormElement = form;
@@ -72,6 +79,7 @@ export default class TodoEditElement {
       ['btn-voice'],
     );
     textInputGroup.appendChild(btnMic);
+    this.#addSpeechRecognition(btnMic);
 
     const btnSubmit = TodoEditElement.#createBtnElement(
       '<img src="images/check.svg" alt="plus" class="input-icon">',

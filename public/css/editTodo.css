@@ -25,9 +25,10 @@
 }
 
 .edit-text-input .btn-voice {
-  text-align: end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 30px;
-  padding-right: 2px;
 }
 
 input[type="datetime-local"]::-webkit-calendar-picker-indicator {
