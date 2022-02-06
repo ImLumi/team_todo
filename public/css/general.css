@@ -27,7 +27,22 @@ header {
   margin: 20px 0;
 }
 
-.icon {
-  width: 100px;
+.logo {
+  text-align: center;
+  width: 220px;
+  min-height: 150px;
   margin-right: 10px;
+  background: url('../images/logo-dt.png')  0 0 no-repeat;
+  background-size: 100% auto;
+}
+
+
+@media screen and (max-width: 576px) {
+  .logo {
+    width: 350px;
+    min-height: 100px;
+    margin-right: 10px;
+    background: url('../images/logo-mobile.png')  0 0 no-repeat;
+    background-size: 100% auto;
+  }
 }
