@@ -8,9 +8,9 @@ export function closeAllMenu() {
 }
 
 export function closeAllMenuEventListener() {
-  document.body.addEventListener('click', () => {
+  window.onclick = () => {
     closeAllMenu();
-  });
+  };
 }
 
 export function toggleMenuVisibility(menuElement) {

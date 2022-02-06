@@ -1,0 +1,84 @@
+.todo span {
+  display: none;
+  position: absolute;
+  width: 100px;
+  color: #ccc;
+  left: calc(50% - 50px);
+  z-index: 2;
+}
+
+.undo {
+  cursor: pointer;
+}
+
+.todo::before {
+  position: absolute;
+  right: 50%;
+  top: 0;
+  height: 100%;
+  content: "";
+  /* border-radius: 10px 0  0 10px; */
+}
+
+.todo::after {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 100%;
+  content: "";
+  /* border-radius: 0 10px 10px 0; */
+}
+
+.undo.todo span {
+  display: inline;
+  user-select: none;
+}
+
+.undo.todo::after{
+  animation-timing-function: linear;
+  animation-duration: 3s;
+  animation-name: load-right;
+  background-color: #36365e;
+  width: 50%;
+  border-radius: 0 10px 10px 0;
+}
+.todo.undo::before {
+  animation-timing-function: linear;
+  animation-duration: 3s;
+  animation-name: load-left;
+  background-color: #36365e;
+  width: 50%;
+  border-radius: 10px 0  0 10px;
+}
+
+@keyframes load-left {
+  0% {
+    width: 40px;
+    border-radius: 0; 
+  }
+  85% {
+    border-radius: 0; 
+  }
+  95% {
+    border-radius: 10px 0  0 10px; }
+  100% {
+    width: 50%;
+    border-radius: 10px 0  0 10px; 
+  }
+}
+@keyframes load-right {
+  0% {
+    width: 40px;
+    border-radius: 0; 
+  }
+  85% {
+    border-radius: 0; 
+  }
+  95% {
+    border-radius: 0 10px 10px 0;
+   }
+  100% {
+    width: 50%;
+    border-radius: 0 10px 10px 0; 
+  }
+}
