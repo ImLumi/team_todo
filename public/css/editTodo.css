@@ -1,0 +1,61 @@
+.edit-form {
+  border-radius: inherit;
+  overflow: hidden;
+  width: 100%;
+  display: grid;
+  grid-template: repeat(2, 45px) / auto 45px;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.edit-text-input {
+  display: flex;
+}
+
+.edit-form input,
+.edit-text-input .btn-voice {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  font-size: 1rem;
+  width: 100%;
+  padding: 3px 0;
+  color: #ccc;
+  outline: none;
+}
+
+.edit-text-input .btn-voice {
+  text-align: end;
+  width: 30px;
+  padding-right: 2px;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  background-image: url("../images/calendar.svg");
+}
+
+.btn-edit,
+.btn-close {
+  border: none;
+  background-color: #fff;
+  align-self: stretch;
+}
+
+.btn-edit:hover {
+  background-color: rgba(21, 255, 0, 0.3);
+}
+.btn-close:hover {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+.btn-edit {
+  grid-row: 1/2;
+  grid-column: 2/3;
+  /* background-color: transparent; */
+}
+
+.btn-close {
+  grid-row: 2/3;
+  grid-column: 2/3;
+  /* background-color: transparent; */
+}

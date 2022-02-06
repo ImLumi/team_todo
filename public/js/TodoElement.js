@@ -1,14 +1,17 @@
 import { removeTodoFromLocalStorage } from './todoDbUtils.js';
 import { createMenuBtnHandler, closeAllMenuEventListener } from './menuShowAndHide.js';
 import { createUID } from './utils.js';
+import TodoEditElement from './TodoEditElement.js';
 
 export default class TodoElement {
   #todoText;
   #dateTime;
   #isCompleted;
   #id;
+  #todoEditForm;
   #todoGroupElement;
   #todoTextElement;
+  #todoShowMenuBtnElement;
   #todoMenuElement;
 
   constructor(todoText, dateTime, isCompeted = false, id = null) {
@@ -19,8 +22,18 @@ export default class TodoElement {
     this.#todoGroupElement = document.createElement('div');
   }
 
-  #setTodoText(text) {
+  setTodoText(text) {
     this.#todoText = text;
+  }
+
+  setDateTime(dateTime) {
+    this.#dateTime = dateTime;
+  }
+
+  #showEditFormElement() {
+    this.#todoEditForm.showFormElement();
+    this.#todoTextElement.classList.add('d-none');
+    this.#todoShowMenuBtnElement.classList.add('d-none');
   }
 
   #createEditBtn() {
@@ -28,9 +41,7 @@ export default class TodoElement {
     editBtn.classList.add('btn');
     editBtn.innerHTML = '<img src="images/edit.svg" alt="edit">Szerkesztés';
     editBtn.addEventListener('click', () => {
-      this.#setTodoText('Majd jön valami editálós cucc');
-      this.#renderTodo();
-      console.dir(this);
+      this.#showEditFormElement();
     });
     return editBtn;
   }
@@ -61,7 +72,7 @@ export default class TodoElement {
     showMenuBtn.classList.add('menu-btn');
     showMenuBtn.innerHTML = '<img src="images/dots.svg" alt="dots">';
     showMenuBtn.addEventListener('click', createMenuBtnHandler(this.#todoMenuElement));
-    return showMenuBtn;
+    this.#todoShowMenuBtnElement = showMenuBtn;
   }
 
   #createTodoMenuElement() {
@@ -83,23 +94,28 @@ export default class TodoElement {
     this.#todoGroupElement.remove();
   }
 
-  #renderTodo() {
+  renderTodo() {
     this.#todoTextElement.textContent = this.#todoText;
+    this.#todoTextElement.classList.remove('d-none');
+    this.#todoShowMenuBtnElement.classList.remove('d-none');
   }
 
   #createTodoHTML() {
     this.#createTodoTextElement();
     this.#createTodoMenuElement();
+    this.#createShowMenuBtn();
+    this.#todoEditForm = new TodoEditElement(this.#todoText, this.#dateTime, this);
     this.#todoGroupElement.classList.add('todo');
     this.#todoGroupElement.appendChild(this.#todoTextElement);
-    this.#todoGroupElement.appendChild(this.#createShowMenuBtn());
+    this.#todoGroupElement.appendChild(this.#todoShowMenuBtnElement);
     this.#todoGroupElement.appendChild(this.#todoMenuElement);
+    this.#todoGroupElement.appendChild(this.#todoEditForm.getEditFormElement());
   }
 
   addTodoToHTMLElement(parentElement) {
     closeAllMenuEventListener();
     this.#createTodoHTML();
-    this.#renderTodo();
+    this.renderTodo();
     parentElement.appendChild(this.#todoGroupElement);
   }
 
