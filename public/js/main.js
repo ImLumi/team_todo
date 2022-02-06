@@ -2,9 +2,15 @@
 import { addTodoToLocalStorage } from './todoDbUtils.js';
 import { loadTodo } from './todoUtils.js';
 import TodoElement from './TodoElement.js';
+import speechRecognition from './speechRecognition.js';
 
 const todoContainer = document.querySelector('.todo-container');
 const formTodo = document.querySelector('.form-todo');
+const voiceBtn = document.getElementById('create-todo-voice-btn');
+voiceBtn.addEventListener('click', () => {
+  const input = voiceBtn.parentElement.querySelector('input');
+  speechRecognition(voiceBtn, input);
+});
 
 formTodo.addEventListener('submit', (e) => {
   e.preventDefault();
