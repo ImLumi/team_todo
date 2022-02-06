@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/questionMark.css">
   <link rel="stylesheet" href="css/pendingAndDone.css">
   <link rel="stylesheet" href="css/editTodo.css">
+  <link rel="stylesheet" href="css/voice-active.css">
   <link rel="stylesheet" href="css/utils.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>ToDo</title>
@@ -20,13 +21,13 @@
 <body>
   <div class="wrapper">
     <header>
-      <img src="./images/logoWithoutBackground.png" alt="logo" class="icon">
-      <h1>TODO</h1>
+      <div class="logo"></div>     
     </header>
     <main>
       <form class="form-todo" novalidate>
-        <button type="button" class="btn-voice"><img src="images/mic.svg" alt="microphone"
-            class="input-icon mic"></button>
+        <button type="button" class="btn-voice">
+          <img src="images/mic.svg" alt="microphone" class="input-icon mic">
+        </button>
         <input type="text" name="todoText" class="todo-text-input" required>
         <div class="calendar-wrapper">
           <input class="date-time-input" type="datetime-local" name="dateTime">
