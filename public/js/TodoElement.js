@@ -1,5 +1,5 @@
 import { removeTodoFromLocalStorage, updateLocalStorageWithEditedTodo } from './todoDbUtils.js';
-import { createMenuBtnHandler, closeAllMenuEventListener } from './menuShowAndHide.js';
+import { createMenuBtnHandler, closeAllMenuEventListener, toggleMenuVisibility } from './menuShowAndHide.js';
 import { createUID } from './utils.js';
 import TodoEditElement from './TodoEditElement.js';
 
@@ -64,6 +64,7 @@ export default class TodoElement {
     delBtn.innerHTML = '<img src="images/trash.svg" alt="trash">Törlés';
     delBtn.addEventListener('click', (e) => {
       e.stopPropagation();
+      toggleMenuVisibility(this.#todoMenuElement);
       this.#removeTodo();
     });
     return delBtn;
@@ -92,8 +93,17 @@ export default class TodoElement {
   }
 
   #removeTodo() {
-    removeTodoFromLocalStorage('todoList', this.#id);
-    this.#todoGroupElement.remove();
+    this.#todoGroupElement.classList.add('undo');
+    const timeOutId = setTimeout(() => {
+      removeTodoFromLocalStorage('todoList', this.#id);
+      this.#todoGroupElement.remove();
+    }, 3000);
+    const handlerUndo = () => {
+      clearTimeout(timeOutId);
+      this.#todoGroupElement.classList.remove('undo');
+      this.#todoGroupElement.removeEventListener('click', handlerUndo);
+    };
+    this.#todoGroupElement.addEventListener('click', handlerUndo);
   }
 
   renderTodo() {
@@ -107,6 +117,7 @@ export default class TodoElement {
     this.#createTodoMenuElement();
     this.#createShowMenuBtn();
     this.#todoEditForm = new TodoEditElement(this.#todoText, this.#dateTime, this);
+    this.#todoGroupElement.innerHTML += '<span>Visszavonás</span>';
     this.#todoGroupElement.classList.add('todo');
     this.#todoGroupElement.appendChild(this.#todoTextElement);
     this.#todoGroupElement.appendChild(this.#todoShowMenuBtnElement);
