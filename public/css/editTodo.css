@@ -19,9 +19,12 @@
   border-bottom: 1px solid #ccc;
   font-size: 1rem;
   width: 100%;
-  padding: 3px 0;
   color: #ccc;
   outline: none;
+}
+
+.edit-text-input input {
+  padding: 0 5px 3px 0;
 }
 
 .edit-text-input .btn-voice {
@@ -40,6 +43,9 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   border: none;
   background-color: #fff;
   align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-edit:hover {
