@@ -6,6 +6,7 @@
   border: none;
   outline: none;
   color: #fff;
+  z-index: 2;
   background: rgb(90, 90, 90);
   cursor: pointer;
   position: fixed;
@@ -14,6 +15,7 @@
   bottom: 30px;
   border-radius: 50%;
   user-select: none;
+  text-decoration: none;
 }
 
 .help:before {

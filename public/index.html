@@ -14,14 +14,14 @@
   <link rel="stylesheet" href="css/editTodo.css">
   <link rel="stylesheet" href="css/voice-active.css">
   <link rel="stylesheet" href="css/utils.css">
-  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="css/infoPopUp.css">
   <title>ToDo</title>
 </head>
 
 <body>
   <div class="wrapper">
     <header>
-      <div class="logo"></div>     
+      <div class="logo"></div>
     </header>
     <main>
       <form class="form-todo" novalidate>
@@ -66,7 +66,24 @@
         </div>
       -->
     </main>
-    <div class="help">?</div>
+    <div class="box">
+      <a id="help" class="button help close" href="#popup1">?</a>
+    </div>
+    <div id="popup1" class="overlay">
+      <div class="popup">
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+          <ul class="info-popup-list">
+            <li>A mikrofon ikon segítségével, akár diktálhatod is tennivalód szövegét.</li>
+            <li>A naptár ikon használatával pontos dátumot határozhatsz meg a tennivalódhoz.</li>
+            <li>A plusz ikon-ra kattintva pedig, hozzá adhatod a tennivalódat, a listádhoz.</li>
+            <li>A "pending" gomb segítségével listázhatod, az aktív tennivalóid listáját.</li>
+            <li>A "done" gombbal pedig a már kész tennivalóid listájáoz jutsz hozzá.</li>
+            <li>Tennivaló szerkeztéséhez kattints a bal oldalon található "..." gombokra.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
   <script type="module" src="js/main.js"></script>
 </body>
