@@ -2,7 +2,7 @@
   display: none;
   position: absolute;
   width: 100px;
-  color: #ccc;
+  color: #fff;
   left: calc(50% - 50px);
   z-index: 2;
 }
@@ -34,51 +34,21 @@
   user-select: none;
 }
 
-.undo.todo::after{
-  animation-timing-function: linear;
-  animation-duration: 3s;
-  animation-name: load-right;
-  background-color: #36365e;
-  width: 50%;
-  border-radius: 0 10px 10px 0;
-}
+.undo.todo::after,
 .todo.undo::before {
   animation-timing-function: linear;
   animation-duration: 3s;
-  animation-name: load-left;
-  background-color: #36365e;
+  animation-name: load;
+  background-color: #253965;
   width: 50%;
-  border-radius: 10px 0  0 10px;
 }
 
-@keyframes load-left {
+@keyframes load {
   0% {
     width: 40px;
-    border-radius: 0; 
   }
-  85% {
-    border-radius: 0; 
-  }
-  95% {
-    border-radius: 10px 0  0 10px; }
+
   100% {
-    width: 50%;
-    border-radius: 10px 0  0 10px; 
-  }
-}
-@keyframes load-right {
-  0% {
-    width: 40px;
-    border-radius: 0; 
-  }
-  85% {
-    border-radius: 0; 
-  }
-  95% {
-    border-radius: 0 10px 10px 0;
-   }
-  100% {
-    width: 50%;
-    border-radius: 0 10px 10px 0; 
+    width: calc(50% + 20px);
   }
 }

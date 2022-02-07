@@ -82,12 +82,12 @@ export default class TodoEditElement {
     this.#addSpeechRecognition(btnMic);
 
     const btnSubmit = TodoEditElement.#createBtnElement(
-      '<img src="images/check.svg" alt="plus" class="input-icon">',
+      '<img src="images/check-edit.svg" alt="plus" class="edit-icon">',
       ['btn-edit'],
       true,
     );
     const btnCancel = TodoEditElement.#createBtnElement(
-      '<img src="images/close.svg" alt="close" class="input-icon">',
+      '<img src="images/close.svg" alt="close" class="edit-icon">',
       ['btn-close'],
     );
 
