@@ -18,11 +18,19 @@
   width: 100%;
   border-radius: 10px;
   padding-left: 5px;
+  text-transform: capitalize;
+}
+
+.todo .text-content {
+  padding: 10px;
+  text-align: justify;
 }
 
 .menu-btn {
   cursor: pointer;
   display: flex;
+  align-self: flex-start;
+  padding-top: 16px;
 }
 
 .menu-btn img {
