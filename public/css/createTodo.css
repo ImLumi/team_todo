@@ -1,11 +1,14 @@
 .form-todo {
   display: flex;
   margin-bottom: 40px;
-  border: 1px solid #ccc;
+  border: 3px solid #fff;
   padding: 3px 15px;
   border-radius: 10px;
   height: 50px;
   color: #ccc;
+  
+  /* background-image: url('../images/gepard.jpg'); */
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .form-todo button {
@@ -19,11 +22,13 @@
 .create-todo-icon {
   font-size: 1.2rem;
   color: #ccc;
+  cursor: pointer;
 }
 
 .btn-voice {
   font-size: 1.2rem;
   color: rgb(165, 59, 59);
+  cursor: pointer;
 }
 
 .form-todo input {
@@ -31,8 +36,9 @@
   border: 0;
   background-color: transparent;
   outline: 0;
-  font-size: 1rem;
-  color: #ccc;
+  font-size: 1.1rem;
+  color: black;
+  width: 100%;
 }
 
 .todo-text-input {
@@ -41,11 +47,12 @@
 }
 
 .calendar-wrapper {
-  padding-top: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   margin: auto 0;
   background-color: transparent;
-  display: inline-block;
   margin-right: 10px;
   font-size: 1.1rem;
 }

@@ -5,20 +5,30 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  /* color: #ccc; */
+  color: #222;
 }
 
-body {
-  width: 100%;
-  background-color: #2f3136;
+#mic-color{
+  fill:red;
 }
 
 .wrapper {
   width: 100%;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  /* background: rgb(57,87,153);
+  background: linear-gradient(40deg, rgba(57,87,153,1) 53.2%, rgba(115,178,211,1) 53.3%); */
+  background-image: url('../images/background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+main {
+  width: 500px;
 }
 
 header {
@@ -32,17 +42,26 @@ header {
   width: 220px;
   min-height: 150px;
   margin-right: 10px;
-  background: url('../images/logo-dt.png')  0 0 no-repeat;
+  background: url("../images/logo-dt-light.png") 0 0 no-repeat;
   background-size: 100% auto;
 }
 
-
 @media screen and (max-width: 576px) {
+  main {
+    width: 100%;
+    padding: 0 10px;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
   .logo {
-    width: 350px;
+    width: 100%;
     min-height: 100px;
     margin-right: 10px;
-    background: url('../images/logo-mobile.png')  0 0 no-repeat;
-    background-size: 100% auto;
+    background: url("../images/logo-mobile-light.png") center no-repeat;
+    background-size: contain;
   }
 }

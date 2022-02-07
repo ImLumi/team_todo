@@ -5,7 +5,8 @@
   display: grid;
   grid-template: repeat(2, 45px) / auto 45px;
   align-items: center;
-  column-gap: 10px;
+  column-gap: 3px;
+  padding: 10px 0 10px 10px;
 }
 
 .edit-text-input {
@@ -16,10 +17,11 @@
 .edit-text-input .btn-voice {
   background-color: transparent;
   border: 0;
+  padding-bottom: 7px;
   border-bottom: 1px solid #ccc;
-  font-size: 1rem;
+  font-size: 1.1rem;
   width: 100%;
-  color: #ccc;
+  color: black;
   outline: none;
 }
 
@@ -40,19 +42,32 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 
 .btn-edit,
 .btn-close {
-  border: none;
-  background-color: #fff;
-  align-self: stretch;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  /* padding-left: 20px; */
+  border: none;
+  background-color: #f8f9fa;
+  align-self: stretch;
+  cursor: pointer;
+  box-shadow: none;
+  transition: box-shadow 0.2s linear;
+  border-radius: 10px;
+}
+
+.edit-icon {
+  height: 1rem;
+  
 }
 
 .btn-edit:hover {
-  background-color: rgba(21, 255, 0, 0.3);
+  /* background-color: rgba(21, 255, 0, 0.3); */
+  box-shadow: inset 0px 0px 15px rgba(0, 255, 0, 0.25);
 }
+
 .btn-close:hover {
-  background-color: rgba(255, 0, 0, 0.3);
+  /* background-color: rgba(255, 0, 0, 0.3); */
+  box-shadow: inset 0px 0px 15px rgba(255, 0, 0, 0.25);
 }
 
 .btn-edit {

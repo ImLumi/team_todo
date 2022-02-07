@@ -1,0 +1,22 @@
+<svg width="820" height="600" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+    <linearGradient id="myGradient" gradientTransform="rotate(120)">
+      <stop offset="10%"  stop-color="#2e4576" />
+      <stop offset="95%" stop-color="#638fcf" />
+    </linearGradient>
+    <linearGradient id="myGradient2" gradientTransform="rotate(5)">
+      <!-- éles háromszög 
+        <stop offset="70%"  stop-color="#6eabcc" />
+      <stop offset="70.03%" stop-color="#93d1f3" /> -->
+      <stop offset="100%"  stop-color="#6eabcc" />
+      <stop offset="100%" stop-color="#93d1f3" />
+
+    </linearGradient>
+  </defs>
+ <g>
+  <title>Layer 1</title>
+  <rect transform="rotate(36.0521 353.56 395.275)" stroke="#000" id="svg_8" height="882.60915" width="1098.94511" y="-46.02954" x="-195.91285" fill="url('#myGradient')"/>
+  <rect transform="rotate(33.7426 536.504 111.908) translate(4 -107)" stroke="#000" stroke-width="0" id="svg_9" height="677.81661" width="1151.00833" y="-227" x="-39" fill="url('#myGradient2')"/>
+ </g>
+
+</svg>
