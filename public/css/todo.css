@@ -9,6 +9,7 @@
   padding: 30px 20px;
   padding-bottom: 60px;
   /* gap: 10px; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .todo {
@@ -22,7 +23,7 @@
   min-height: 50px;
   max-height: 150px;
   width: 100%;
-  /* border-radius: 10px; */
+  border-radius: 2px;
   padding-left: 5px;
   text-transform: capitalize;
   padding: 10px 0;
@@ -31,11 +32,6 @@
 .todo:last-child {
   border: none;
 }
-
-.todo:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
 
 .todo .text-content {
   padding: 10px;
@@ -61,29 +57,37 @@
 
 .menu-btn {
   cursor: pointer;
+  margin: 0 10px;
   display: flex;
-  align-self: flex-start;
-  padding-top: 16px;
-  padding-left: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-btn-active {
+  position: relative;
+  right: -10px;
+  background-color: #679ab56e;
+  border-radius: 50%;
+  padding: 10px;
+  /* transform: translateX(10px); */
+  animation: scale .3s;
 }
 
 .menu-btn img {
   width: 20px;
-  margin-right: 10px;
 }
 
 .menu {
   position: absolute;
-  background-color: #fff;
   width: 170px;
   height: 150px;
   display: flex;
   flex-direction: column;
-  top: -50%;
-  right: -189px;
-  border-radius:0 6px 6px 0;
-  border: 2px solid white;
+  top: 0px;
+  right: -195px;
+  border-radius: 0 6px 6px 0;
   overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .menu button {
@@ -92,15 +96,20 @@
   height: 40px;
   display: flex;
   align-items: center;
-  background-color: #679ab5;
+  background-color: #F8F9FA;
   width: 100%;
   height: 100%;
   padding: 0 12px;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .menu button:hover {
-  background-color: rgb(212, 212, 212);
+  background-color: rgb(220, 220, 220);
+}
+
+.menu button:last-child:hover {
+  background-color: #ffd9e1;
 }
 
 .menu button img {
@@ -110,16 +119,27 @@
 
 @media screen and (max-width: 865px) {
   .menu {
-    width: 355px;
+    width: calc(100% + 10px);
     height: 50px;
     flex-direction: row;
     top: calc(100% + 5px);
     right: 0;
     z-index: 1;
+    border-radius: 6px;
+    /* border: 1px solid #3B578C; */
   }
   .menu button {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+}
+
+@keyframes scale {
+  from {
+    transform: scale(0%);
+  }
+  to {
+    transform: scale(100%);
   }
 }

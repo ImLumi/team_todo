@@ -45,14 +45,12 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding-left: 20px; */
   border: none;
-  background-color: #f8f9fa;
   align-self: stretch;
   cursor: pointer;
   box-shadow: none;
-  transition: box-shadow 0.2s linear;
-  border-radius: 10px;
+  background: none;
+  margin-left: 5px;
 }
 
 .edit-icon {
@@ -60,24 +58,16 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   
 }
 
-.btn-edit:hover {
-  /* background-color: rgba(21, 255, 0, 0.3); */
-  box-shadow: inset 0px 0px 15px rgba(0, 255, 0, 0.25);
-}
-
-.btn-close:hover {
-  /* background-color: rgba(255, 0, 0, 0.3); */
-  box-shadow: inset 0px 0px 15px rgba(255, 0, 0, 0.25);
-}
-
 .btn-edit {
   grid-row: 1/2;
   grid-column: 2/3;
-  /* background-color: transparent; */
+}
+
+.btn-edit img {
+  transform: scale(91%);
 }
 
 .btn-close {
   grid-row: 2/3;
   grid-column: 2/3;
-  /* background-color: transparent; */
 }
