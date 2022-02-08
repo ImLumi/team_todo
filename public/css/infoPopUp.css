@@ -1,5 +1,7 @@
 .info-popup-list {
-  list-style: outside;
+  list-style-position: inside;
+  list-style-type: disc;
+  font-size: 12px;
 }
 
 .overlay {
@@ -25,8 +27,8 @@
   border-radius: 5px;
   width: 30%;
   position: fixed;
-  bottom: -5px;
-  right: 60px;
+  bottom: -30px;
+  right: 42px;
   transition: opacity 5s ease-in-out;
 }
 
@@ -39,10 +41,10 @@
   font-size: 30px;
   font-weight: bold;
   text-decoration: none;
-  color: #333;
+  color: rgb(110, 123, 141);
 }
 .popup .close:hover {
-  color: #eecb05;
+  color: #679ab5;
 }
 .popup .content {
   padding-top: 3px;
