@@ -1,4 +1,4 @@
-import speechRecognition from './speechRecognition.js';
+import { startSpeechRecognition } from './speechRecognition.js';
 import { updateLocalStorageWithEditedTodo } from './todoDbUtils.js';
 import loadPage from './todoPages.js';
 
@@ -62,7 +62,7 @@ export default class TodoEditElement {
 
   #addSpeechRecognition(btn) {
     btn.addEventListener('click', () => {
-      speechRecognition(btn, this.#textInputElement);
+      startSpeechRecognition(btn, this.#textInputElement);
     });
   }
 

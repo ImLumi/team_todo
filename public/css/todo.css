@@ -18,9 +18,13 @@
   justify-content: space-between;
   border-bottom: 1px solid #d9dce0;
   min-height: 50px;
-  max-height: 180px;
+  max-height: 150px;
   width: 100%;
   padding: 20px 0 20px 5px;
+}
+
+.todo:last-child {
+  border: none;
 }
 
 .todo .text-content {
@@ -50,9 +54,6 @@
 }
 
 .menu-btn {
-  position: absolute;
-  padding: 10px;
-  right: -10px;
   cursor: pointer;
   margin: 0 10px;
   display: flex;
@@ -61,8 +62,9 @@
 }
 
 .menu-btn-active {
-  background-color: rgba(103, 154, 181, 0.3);
-  box-shadow: 0 0 5px rgba(103, 154, 181, 0.3);
+  position: relative;
+  right: -10px;
+  background-color: #679ab56e;
   border-radius: 50%;
   animation: scale .3s;
 }
@@ -73,9 +75,8 @@
 
 .menu {
   position: absolute;
-  width: 170px;
-  height: 150px;
   display: flex;
+  width: 170px;
   flex-direction: column;
   top: 0px;
   right: -195px;
@@ -86,14 +87,13 @@
 }
 
 .menu button {
+  display: flex;
   border: none;
   outline: none;
-  height: 40px;
-  display: flex;
+  height: 50px;
+  width: 100%;
   align-items: center;
   background-color: #F8F9FA;
-  width: 100%;
-  height: 100%;
   padding: 0 12px;
   cursor: pointer;
   font-size: 14px;
