@@ -3,7 +3,9 @@ import { addTodoToLocalStorage } from './todoDbUtils.js';
 import TodoElement from './TodoElement.js';
 import speechRecognition from './speechRecognition.js';
 import loadPage from './todoPages.js';
+import toogleInfoPopup from './infoPopUp.js';
 
+toogleInfoPopup();
 const formTodo = document.querySelector('.form-todo');
 const voiceBtn = document.getElementById('create-todo-voice-btn');
 loadPage();
