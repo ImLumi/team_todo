@@ -36,6 +36,7 @@
   position: absolute;
   top: 0;
   right: 10px;
+  /* bezárás animálása */
   transition: opacity 200ms;
   font-size: 30px;
   font-weight: bold;

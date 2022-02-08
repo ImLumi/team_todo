@@ -3,7 +3,9 @@
   position: absolute;
   bottom: 3px;
   right: 50px;
+  /* border-bottom: 1px solid #679ab5; */
   display: inline-block;
   user-select: none;
   color: #679ab5;
+  /* color: rgb(255, 15, 15); Lejáró todo piros színe */
 }

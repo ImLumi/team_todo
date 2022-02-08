@@ -8,6 +8,7 @@
   justify-content: center;
   user-select: none;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  /* border-radius: 10px; */
   border-radius:5px 5px 0 0;
   overflow: hidden;
   font-size: 5rem;
@@ -21,6 +22,7 @@
   padding: 5px 10px;
   cursor: pointer;
   border: none;
+  /* border-bottom: 2px solid var(--status-border-color); */
   background-color: rgb(110, 123, 141);
 
 }
