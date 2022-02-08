@@ -1,9 +1,9 @@
 /* eslint-disable consistent-return */
 import { addTodoToLocalStorage } from './todoDbUtils.js';
 import TodoElement from './TodoElement.js';
-import speechRecognition from './speechRecognition.js';
 import loadPage from './todoPages.js';
 import toogleInfoPopup from './infoPopUp.js';
+import { startSpeechRecognition } from './speechRecognition.js';
 
 toogleInfoPopup();
 const formTodo = document.querySelector('.form-todo');
@@ -12,7 +12,7 @@ loadPage();
 
 voiceBtn.addEventListener('click', () => {
   const input = voiceBtn.parentElement.querySelector('input');
-  speechRecognition(voiceBtn, input);
+  startSpeechRecognition(voiceBtn, input);
 });
 
 formTodo.addEventListener('submit', (e) => {
