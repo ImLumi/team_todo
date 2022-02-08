@@ -117,7 +117,8 @@ export default class TodoElement {
     this.#createTodoMenuElement();
     this.#createShowMenuBtn();
     this.#todoEditForm = new TodoEditElement(this.#todoText, this.#dateTime, this);
-    this.#todoGroupElement.innerHTML += '<span>Visszavonás</span>';
+    const dateTimeString = (this.#dateTime) ? this.#dateTime.split('T').join('&nbsp;&nbsp;') : '--:--';
+    this.#todoGroupElement.innerHTML += `<span>Visszavonás</span> <div class="deadline">${dateTimeString}</div>`;
     this.#todoGroupElement.classList.add('todo');
     this.#todoGroupElement.appendChild(this.#todoTextElement);
     this.#todoGroupElement.appendChild(this.#todoShowMenuBtnElement);

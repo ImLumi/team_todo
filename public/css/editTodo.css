@@ -6,7 +6,6 @@
   grid-template: repeat(2, 45px) / auto 45px;
   align-items: center;
   column-gap: 3px;
-  padding: 10px 0 10px 10px;
 }
 
 .edit-text-input {
