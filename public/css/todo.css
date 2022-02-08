@@ -21,19 +21,17 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
   border-bottom: 1px solid #d9dce0;
   min-height: 50px;
-  max-height: 150px;
+  max-height: 180px;
   width: 100%;
-  border-radius: 2px;
-  padding-left: 5px;
-  padding: 10px 0;
+  padding: 20px 38px 20px 5px;
 }
 
-.todo:last-child {
+/* .todo:last-child {
   border: none;
-}
+} */
 
 .todo .text-content {
-  padding: 10px;
+  padding: 0 10px;
   text-align: justify;
   max-height: 120px;
   word-wrap: break-word;
@@ -59,6 +57,9 @@
 }
 
 .menu-btn {
+  position: absolute;
+  padding: 10px;
+  right: -10px;
   cursor: pointer;
   margin: 0 10px;
   display: flex;
@@ -67,9 +68,8 @@
 }
 
 .menu-btn-active {
-  position: relative;
-  right: -10px;
-  background-color: #679ab56e;
+  background-color: rgba(103, 154, 181, 0.3);
+  box-shadow: 0 0 5px rgba(103, 154, 181, 0.3);
   border-radius: 50%;
   padding: 10px;
   /* transform: translateX(10px); */
