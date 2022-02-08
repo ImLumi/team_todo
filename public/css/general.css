@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  user-select: none;
 }
 
 #mic-color{
@@ -19,8 +20,6 @@
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  /* background: rgb(57,87,153);
-  background: linear-gradient(40deg, rgba(57,87,153,1) 53.2%, rgba(115,178,211,1) 53.3%); */
   background-image: url('../images/background.svg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -35,6 +34,10 @@ header {
   display: flex;
   align-items: center;
   margin: 20px 0;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
 }
 
 .logo {

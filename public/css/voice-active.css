@@ -17,8 +17,7 @@
 
 @keyframes ring {
   0% {
-    /* width: 5px;
-    height: 5px; */
+    height: 5px;
     transform: scale(0, 0);
     opacity: 1;
   }
