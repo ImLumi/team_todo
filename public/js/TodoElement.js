@@ -46,10 +46,14 @@ export default class TodoElement {
     return editBtn;
   }
 
-  #createCompletedBtn() {
+  #createToggleCompletedBtn() {
     const completedBtn = document.createElement('button');
     completedBtn.classList.add('btn');
-    completedBtn.innerHTML = '<img src="images/check.svg" alt="check">Kész';
+    if (this.#isCompleted) {
+      completedBtn.innerHTML = '<img src="images/undo.svg" alt="check">Vissszaállítás';
+    } else {
+      completedBtn.innerHTML = '<img src="images/check.svg" alt="check">Kész';
+    }
     completedBtn.addEventListener('click', () => {
       this.#isCompleted = !this.#isCompleted;
       updateLocalStorageWithEditedTodo('todoList', this.toObject());
@@ -82,8 +86,8 @@ export default class TodoElement {
     this.#todoMenuElement = document.createElement('div');
     this.#todoMenuElement.classList.add('menu', 'd-none');
 
-    this.#todoMenuElement.appendChild(this.#createCompletedBtn());
-    this.#todoMenuElement.appendChild(this.#createEditBtn());
+    this.#todoMenuElement.appendChild(this.#createToggleCompletedBtn());
+    if (this.#isCompleted === false) this.#todoMenuElement.appendChild(this.#createEditBtn());
     this.#todoMenuElement.appendChild(this.#createDeleteBtn());
   }
 
